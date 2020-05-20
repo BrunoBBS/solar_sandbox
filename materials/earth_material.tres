@@ -4,12 +4,9 @@
 [ext_resource path="res://textures/2k_earth_daymap.jpg" type="Texture" id=2]
 [ext_resource path="res://textures/2k_earth_specular_map.jpg" type="Texture" id=3]
 
-
-
-
 [resource]
 albedo_texture = ExtResource( 2 )
-metallic = 0.5
+metallic = 0.66
 metallic_texture = ExtResource( 3 )
 normal_enabled = true
 normal_scale = 16.0

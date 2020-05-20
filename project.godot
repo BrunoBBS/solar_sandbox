@@ -16,8 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="Solar Sandbox"
+run/main_scene="res://scenes/view_planet.tscn"
 config/icon="res://icon.png"
+
+[physics]
+
+3d/default_gravity=0.0
+3d/default_gravity_vector=Vector3( 0, 0, 0 )
+3d/default_linear_damp=0.0
+3d/default_angular_damp=0.0
 
 [rendering]
 
+quality/filters/anisotropic_filter_level=16
 environment/default_environment="res://default_env.tres"
