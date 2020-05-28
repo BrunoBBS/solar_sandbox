@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody",
+"class": "Selectable",
+"language": "GDScript",
+"path": "res://scripts/selectable.gd"
+} ]
 _global_script_class_icons={
-
+"Selectable": ""
 }
 
 [application]
@@ -28,5 +33,6 @@ config/icon="res://icon.png"
 
 [rendering]
 
+threads/thread_model=2
 quality/filters/anisotropic_filter_level=16
 environment/default_environment="res://default_env.tres"
