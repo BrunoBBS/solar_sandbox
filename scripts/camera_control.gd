@@ -13,7 +13,7 @@ enum Freelook_Modes {MOUSE, INPUT_ACTION, MOUSE_AND_INPUT_ACTION}
 # Freelook settings
 export var freelook = true
 export (Freelook_Modes) var freelook_mode = 2
-export (float, 0.0, 1.0) var sensitivity = 0.5
+export (float, 0.0, 1.0) var sensitivity = 0.01
 export (float, 0.0, 0.999, 0.001) var smoothness = 0.5 setget set_smoothness
 export (int, 0, 360) var yaw_limit = 360
 export (int, 0, 360) var pitch_limit = 360

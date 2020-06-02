@@ -13,7 +13,6 @@ height = 127.0
 [node name="Earth" type="RigidBody"]
 mass = 0.06
 gravity_scale = 0.0
-linear_velocity = Vector3( 0, 0, 2 )
 angular_velocity = Vector3( 0, 0.1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
