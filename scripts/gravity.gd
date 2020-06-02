@@ -12,10 +12,9 @@ func grav_force(mass_1, mass_2, pos_1, pos_2):
 		return Vector3(0, 0, 0)
 
 	var force = (gc * mass_1 * mass_2) / dist_sq
-	print(force)
 	var vec =  (pos_2 - pos_1)
 	var vec_force = vec * force
-	print(vec_force)
+
 
 	return vec_force
 
@@ -27,7 +26,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(a):
 	for planet_1 in self.get_children():
-		print(planet_1.get_name())
 		for planet_2 in self.get_children():
 			var force = grav_force(planet_1.mass, planet_2.mass, planet_1.get_global_transform().origin, planet_2.get_global_transform().origin)
 			planet_1.apply_central_impulse(force)
