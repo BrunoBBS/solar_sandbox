@@ -6,17 +6,17 @@ extends Spatial
 # User settings:
 # General settings
 export var enabled = true setget set_enabled
-export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 2
+export(int, "Visible", "Hidden", "Caputered, Confined") var mouse_mode = 0
 
 enum Freelook_Modes {MOUSE, INPUT_ACTION, MOUSE_AND_INPUT_ACTION}
 
 # Freelook settings
-export var freelook = true
+export var freelook = false
 export (Freelook_Modes) var freelook_mode = 2
-export (float, 0.0, 1.0) var sensitivity = 0.01
+export (float, 0.0, 1.0) var sensitivity = 0.1
 export (float, 0.0, 0.999, 0.001) var smoothness = 0.5 setget set_smoothness
-export (int, 0, 360) var yaw_limit = 360
-export (int, 0, 360) var pitch_limit = 360
+export (int, 0, 360) var yaw_limit = 180
+export (int, 0, 360) var pitch_limit = 180
 
 # Pivot Settings
 export(NodePath) var privot setget set_privot
@@ -27,8 +27,8 @@ export var collisions = true setget set_collisions
 # Movement settings
 export var movement = true
 export (float, 0.0, 1.0) var acceleration = 1.0
-export (float, 0.0, 0.0, 1.0) var deceleration = 0.1
-export var max_speed = Vector3(1.0, 1.0, 1.0)
+export (float, 0.0, 0.0, 1.0) var deceleration = 1.0
+export var max_speed = Vector3(1000.0, 1000.0, 1000.0)
 export var local = true
 
 # Input Actions
@@ -89,17 +89,26 @@ func _ready():
 		add_child(_gui)
 
 func _input(event):
-		if freelook:
-			if event is InputEventMouseMotion:
-				_mouse_offset = event.relative
-				
-			_rotation_offset.x = Input.get_action_strength(rotate_right_action) - Input.get_action_strength(rotate_left_action)
-			_rotation_offset.y = Input.get_action_strength(rotate_down_action) - Input.get_action_strength(rotate_up_action)
-		
-		if movement:
-			_direction.x = Input.get_action_strength(right_action) - Input.get_action_strength(left_action)
-			_direction.y = Input.get_action_strength(up_action) - Input.get_action_strength(down_action)
-			_direction.z = Input.get_action_strength(backward_action) - Input.get_action_strength(forward_action)
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_RIGHT and event.pressed:
+			freelook = true
+			mouse_mode = 2
+		elif event.button_index == BUTTON_RIGHT and !event.pressed:
+			freelook = false
+			mouse_mode = 0
+		Input.set_mouse_mode(mouse_mode)
+
+	if freelook:
+		if event is InputEventMouseMotion:
+			_mouse_offset = event.relative
+
+		_rotation_offset.x = Input.get_action_strength(rotate_right_action) - Input.get_action_strength(rotate_left_action)
+		_rotation_offset.y = Input.get_action_strength(rotate_down_action) - Input.get_action_strength(rotate_up_action)
+
+	if movement:
+		_direction.x = Input.get_action_strength(right_action) - Input.get_action_strength(left_action)
+		_direction.y = Input.get_action_strength(up_action) - Input.get_action_strength(down_action)
+		_direction.z = Input.get_action_strength(backward_action) - Input.get_action_strength(forward_action)
 
 func _process(delta):
 	if privot:
@@ -142,12 +151,12 @@ func _update_movement(delta):
 
 func _update_rotation(delta):
 	var offset = Vector2();
-	
+
 	if not freelook_mode == Freelook_Modes.INPUT_ACTION:
 		offset += _mouse_offset * sensitivity
-	if not freelook_mode == Freelook_Modes.MOUSE: 
+	if not freelook_mode == Freelook_Modes.MOUSE:
 		offset += _rotation_offset * sensitivity * ROTATION_MULTIPLIER * delta
-	
+
 	_mouse_offset = Vector2()
 
 	_yaw = _yaw * smoothness + offset.x * (1.0 - smoothness)
