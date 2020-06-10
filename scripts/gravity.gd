@@ -27,5 +27,5 @@ func _ready():
 func _physics_process(a):
 	for planet_1 in self.get_children():
 		for planet_2 in self.get_children():
-			var force = grav_force(planet_1.mass, planet_2.mass, planet_1.get_global_transform().origin, planet_2.get_global_transform().origin)
+			var force = grav_force(planet_1.get_mass(), planet_2.get_mass(), planet_1.get_global_transform().origin, planet_2.get_global_transform().origin)
 			planet_1.apply_central_impulse(force)

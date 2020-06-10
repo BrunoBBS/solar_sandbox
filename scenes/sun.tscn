@@ -21,7 +21,7 @@ radius = 696.35
 height = 1392.7
 
 [sub_resource type="SphereShape" id=3]
-radius = 4.0
+radius = 696.35
 
 [node name="sun" type="RigidBody"]
 mass = 20000.0
