@@ -17,43 +17,43 @@ operator = 2
 default_input_values = [ 0, 0.0, 1, 0.001 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=6]
+[sub_resource type="VisualShaderNodeScalarFunc" id=5]
 output_port_for_preview = 0
 function = 0
 
-[sub_resource type="VisualShaderNodeInput" id=7]
+[sub_resource type="VisualShaderNodeInput" id=6]
 output_port_for_preview = 0
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeScalarOp" id=10]
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
 output_port_for_preview = 0
 default_input_values = [ 0, 0.0, 1, 0.5 ]
 operator = 9
 
-[sub_resource type="VisualShaderNodeInput" id=14]
+[sub_resource type="VisualShaderNodeInput" id=8]
 output_port_for_preview = 0
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=15]
+[sub_resource type="VisualShaderNodeScalarFunc" id=9]
 output_port_for_preview = 0
 function = 1
 
-[sub_resource type="VisualShaderNodeTexture" id=16]
+[sub_resource type="VisualShaderNodeTexture" id=10]
 output_port_for_preview = 0
 texture = ExtResource( 1 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=17]
+[sub_resource type="VisualShaderNodeVectorOp" id=11]
 output_port_for_preview = 0
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 1, 1 ) ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeVectorOp" id=18]
+[sub_resource type="VisualShaderNodeVectorOp" id=12]
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=19]
+[sub_resource type="VisualShaderNodeScalarFunc" id=13]
 output_port_for_preview = 0
 function = 1
 
-[sub_resource type="VisualShader" id=20]
+[sub_resource type="VisualShader" id=14]
 code = "shader_type spatial;
 render_mode blend_mul;
 
@@ -126,19 +126,19 @@ void light() {
 graph_offset = Vector2( -473.333, -246.333 )
 modes/blend = 3
 nodes/fragment/0/position = Vector2( 1060, -40 )
-nodes/fragment/2/node = SubResource( 7 )
+nodes/fragment/2/node = SubResource( 6 )
 nodes/fragment/2/position = Vector2( -720, -120 )
-nodes/fragment/3/node = SubResource( 14 )
+nodes/fragment/3/node = SubResource( 8 )
 nodes/fragment/3/position = Vector2( -720, 220 )
-nodes/fragment/4/node = SubResource( 15 )
+nodes/fragment/4/node = SubResource( 9 )
 nodes/fragment/4/position = Vector2( -220, 80 )
-nodes/fragment/5/node = SubResource( 16 )
+nodes/fragment/5/node = SubResource( 10 )
 nodes/fragment/5/position = Vector2( 260, -220 )
-nodes/fragment/6/node = SubResource( 17 )
+nodes/fragment/6/node = SubResource( 11 )
 nodes/fragment/6/position = Vector2( 580, -160 )
-nodes/fragment/8/node = SubResource( 18 )
+nodes/fragment/8/node = SubResource( 12 )
 nodes/fragment/8/position = Vector2( 20, -100 )
-nodes/fragment/9/node = SubResource( 19 )
+nodes/fragment/9/node = SubResource( 13 )
 nodes/fragment/9/position = Vector2( -80, 320 )
 nodes/fragment/10/node = SubResource( 1 )
 nodes/fragment/10/position = Vector2( 120, 200 )
@@ -148,11 +148,11 @@ nodes/fragment/12/node = SubResource( 3 )
 nodes/fragment/12/position = Vector2( -500, 320 )
 nodes/fragment/13/node = SubResource( 4 )
 nodes/fragment/13/position = Vector2( -460, 80 )
-nodes/fragment/19/node = SubResource( 6 )
+nodes/fragment/19/node = SubResource( 5 )
 nodes/fragment/19/position = Vector2( -280, 300 )
-nodes/fragment/22/node = SubResource( 10 )
+nodes/fragment/22/node = SubResource( 7 )
 nodes/fragment/22/position = Vector2( 840, -60 )
 nodes/fragment/connections = PoolIntArray( 5, 0, 6, 0, 2, 0, 8, 0, 4, 0, 8, 1, 8, 0, 5, 0, 3, 0, 12, 0, 13, 0, 4, 0, 3, 0, 13, 0, 12, 0, 19, 0, 19, 0, 9, 0, 9, 0, 10, 0, 10, 0, 11, 0, 11, 0, 6, 1, 6, 0, 22, 0, 22, 0, 0, 5 )
 
 [resource]
-shader = SubResource( 20 )
+shader = SubResource( 14 )
