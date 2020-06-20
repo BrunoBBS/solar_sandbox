@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://shaders/sun_shader.tres" type="Material" id=1]
 [ext_resource path="res://textures/noise_texture.tres" type="Texture" id=2]
 [ext_resource path="res://textures/2k_sun.jpg" type="Texture" id=3]
+[ext_resource path="res://scripts/selectable.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 render_priority = 1
@@ -30,6 +31,7 @@ axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 angular_velocity = Vector3( 0, 0.2, 0 )
+script = ExtResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 use_in_baked_light = true
@@ -38,3 +40,6 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
