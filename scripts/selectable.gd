@@ -10,6 +10,5 @@ func _ready():
 	add_child(gui)
 
 func _on_input_event(camera, event, click_position, click_normal, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			gui.show()
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		gui.show()

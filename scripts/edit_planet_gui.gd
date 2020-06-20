@@ -32,8 +32,11 @@ func _ready():
 
 	var container = VBoxContainer.new()
 
+	labels["title"] = Label.new()
+	labels["title"].set_text("Edit planet - esc to exit")
+
 	labels["mass"] = Label.new()
-	labels["mass"].set_text("Mass - " + str(curr_planet.get_mass()))
+	labels["mass"].set_text("Mass -> " + str(curr_planet.get_mass()))
 
 	var mass = HScrollBar.new()
 	mass.set_max(65535)
@@ -42,7 +45,7 @@ func _ready():
 	mass.connect("value_changed", self, "_on_mass_value_changed")
 
 	labels["scale"] = Label.new()
-	labels["scale"].set_text("Scale - " + str(scale))
+	labels["scale"].set_text("Scale -> " + str(scale))
 
 	var sb_scale = SpinBox.new()
 	sb_scale.set_max(65535)
@@ -51,15 +54,59 @@ func _ready():
 	sb_scale.set_value(scale)
 	sb_scale.connect("value_changed", self, "_on_scale_value_changed")
 
+	labels["pos_x"] = Label.new()
+	labels["pos_x"].set_text("x -> " + str(curr_planet.translation.x))
+	var sl_pos_x = HScrollBar.new()
+	sl_pos_x.set_max(5000)
+	sl_pos_x.set_min(-5000)
+	sl_pos_x.set_value(curr_planet.translation.x)
+	sl_pos_x.connect("value_changed", self, "_on_pos_x_value_changed")
+
+	labels["pos_y"] = Label.new()
+	labels["pos_y"].set_text("y -> " + str(curr_planet.translation.y))
+	var sl_pos_y = HScrollBar.new()
+	sl_pos_y.set_max(5000)
+	sl_pos_y.set_min(-5000)
+	sl_pos_y.set_value(curr_planet.translation.y)
+	sl_pos_y.connect("value_changed", self, "_on_pos_y_value_changed")
+
+
+	labels["pos_z"] = Label.new()
+	labels["pos_z"].set_text("z -> " + str(curr_planet.translation.z))
+	var sl_pos_z = HScrollBar.new()
+	sl_pos_z.set_max(5000)
+	sl_pos_z.set_min(-5000)
+	sl_pos_z.set_value(curr_planet.translation.z)
+	sl_pos_z.connect("value_changed", self, "_on_pos_z_value_changed")
+
 	add_child(panel)
 	panel.add_child(container)
+	container.add_child(labels["title"])
 	container.add_child(labels["mass"])
 	container.add_child(mass)
 	container.add_child(labels["scale"])
 	container.add_child(sb_scale)
+	container.add_child(labels["pos_x"])
+	container.add_child(sl_pos_x)
+	container.add_child(labels["pos_y"])
+	container.add_child(sl_pos_y)
+	container.add_child(labels["pos_z"])
+	container.add_child(sl_pos_z)
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	self.hide()
+
+func _on_pos_x_value_changed(value):
+	curr_planet.translation.x = value
+	labels["pos_x"].set_text("x -> " + str(curr_planet.translation.x))
+
+func _on_pos_y_value_changed(value):
+	curr_planet.translation.y = value
+	labels["pos_y"].set_text("y -> " + str(curr_planet.translation.y))
+
+func _on_pos_z_value_changed(value):
+	curr_planet.translation.z = value
+	labels["pos_z"].set_text("z -> " + str(curr_planet.translation.z))
 
 func _on_mass_value_changed(value):
 	curr_planet.set_mass(value)
@@ -79,4 +126,3 @@ func scale_planet(rec_scale):
 	var col_shape = curr_planet.get_node("CollisionShape")
 	mesh.scale = mesh.scale.normalized() * rec_scale
 	col_shape.scale = col_shape.scale.normalized() * rec_scale
-
