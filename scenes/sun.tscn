@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://shaders/sun_shader.tres" type="Material" id=1]
 [ext_resource path="res://textures/noise_texture.tres" type="Texture" id=2]
 [ext_resource path="res://textures/2k_sun.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/selectable.gd" type="Script" id=4]
+[ext_resource path="res://scenes/sun_particles.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 render_priority = 1
@@ -11,7 +12,7 @@ next_pass = ExtResource( 1 )
 albedo_texture = ExtResource( 3 )
 emission_enabled = true
 emission = Color( 1, 0.952941, 0.788235, 1 )
-emission_energy = 0.65
+emission_energy = 2.09
 emission_operator = 0
 emission_on_uv2 = false
 emission_texture = ExtResource( 2 )
@@ -40,6 +41,8 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )
+
+[node name="Particles" parent="." instance=ExtResource( 5 )]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

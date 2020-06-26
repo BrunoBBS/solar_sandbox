@@ -5,6 +5,11 @@ Earth, Jupiter, Sun, and milkyway textures, specular maps and normal maps:
     - Made by https://www.solarsystemscope.com/
     - CC BY 4.0 available at https://creativecommons.org/licenses/by/4.0/
 
+Particle assets:
+    - Licensed under Creative Commons Zero 1.0
+    - Available at https://www.kenney.nl/assets/particle-pack
+    - CC0 1.0 available at https://creativecommons.org/publicdomain/zero/1.0/
+
 camera_script.gd and camera_script_gui.gd:
     - Available at https://github.com/Maujoe/godot-camera-control
     - Has been modified
