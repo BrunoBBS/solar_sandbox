@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/John_Bartmann_-_12_-_Interstellar_Space.ogg-ac292a6c5acb6abe016f4685c381155a.oggstr"
+
+[deps]
+
+source_file="res://audio/John_Bartmann_-_12_-_Interstellar_Space.ogg"
+dest_files=[ "res://.import/John_Bartmann_-_12_-_Interstellar_Space.ogg-ac292a6c5acb6abe016f4685c381155a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -229,3 +229,5 @@ func set_smoothness(value):
 
 func set_distance(value):
 	distance = max(0, value)
+
+

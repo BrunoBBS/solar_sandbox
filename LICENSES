@@ -10,6 +10,11 @@ Particle assets:
     - Available at https://www.kenney.nl/assets/particle-pack
     - CC0 1.0 available at https://creativecommons.org/publicdomain/zero/1.0/
 
+Music:
+    - Interstellar Space by John Bartmann is licensed under a CC0 1.0 Universal License.
+    - Available at https://freemusicarchive.org/music/John_Bartmann/Public_Domain_Soundtrack_Music_Album_One/interstellar-space
+    - CC0 1.0 available at https://creativecommons.org/publicdomain/zero/1.0/
+
 camera_script.gd and camera_script_gui.gd:
     - Available at https://github.com/Maujoe/godot-camera-control
     - Has been modified

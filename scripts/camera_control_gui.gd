@@ -99,7 +99,7 @@ func _ready():
 		lbl_distance.set_text("Distance")
 
 		var distance = SpinBox.new()
-		distance.set_max(1000)
+		distance.set_max(2000)
 		distance.set_value(camera.distance)
 		distance.connect("value_changed",self,"_on_box_distance_value_changed")
 

@@ -24,8 +24,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(a):
+func _physics_process(delta):
 	for planet_1 in self.get_children():
 		for planet_2 in self.get_children():
 			var force = grav_force(planet_1.get_mass(), planet_2.get_mass(), planet_1.get_global_transform().origin, planet_2.get_global_transform().origin)
-			planet_1.apply_central_impulse(force)
+			planet_1.apply_central_impulse(force*Engine.time_scale)
