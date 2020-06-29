@@ -86,38 +86,46 @@ __meta__ = {
 }
 
 [node name="HUD" type="Control" parent="."]
-margin_left = 578.0
-margin_right = 1026.0
-margin_bottom = 602.0
+anchor_right = 1.0
+margin_left = 2.0
+margin_top = 3.30164
+margin_right = -3.0
+margin_bottom = 595.302
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="time_1x" type="Button" parent="HUD"]
-margin_left = 789.522
-margin_top = 14.196
-margin_right = 848.522
-margin_bottom = 47.196
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -246.0
+margin_top = 5.0
+margin_right = -181.0
+margin_bottom = 50.0
 text = "1X >"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="time_5x" type="Button" parent="HUD"]
-margin_left = 858.312
-margin_top = 13.4016
-margin_right = 917.312
-margin_bottom = 46.4016
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -170.0
+margin_top = 5.0
+margin_right = -102.0
+margin_bottom = 50.0
 text = "20X >>"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="time_10x" type="Button" parent="HUD"]
-margin_left = 929.522
-margin_top = 13.7988
-margin_right = 1001.52
-margin_bottom = 46.7988
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -90.0
+margin_top = 5.0
+margin_right = -20.0
+margin_bottom = 50.0
 text = "50X >>>"
 __meta__ = {
 "_edit_use_anchors_": false

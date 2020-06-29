@@ -159,13 +159,6 @@ func _ready():
 
 		add_child(panel)
 		panel.add_child(container)
-		container.add_child(lbl_mouse)
-		container.add_child(mouse)
-		container.add_child(freelook)
-		container.add_child(lbl_sensitivity)
-		container.add_child(sensitivity)
-		container.add_child(lbl_smoothless)
-		container.add_child(smoothness)
 		container.add_child(lbl_privot)
 		container.add_child(privot)
 		container.add_child(btn_rot_privot)
@@ -173,17 +166,7 @@ func _ready():
 		container.add_child(distance)
 		container.add_child(lbl_yaw)
 		container.add_child(yaw)
-		container.add_child(lbl_pitch)
-		container.add_child(pitch)
-		container.add_child(collisions)
-		container.add_child(lbl_movement)
-		container.add_child(movement)
-		container.add_child(lbl_speed)
-		container.add_child(speed)
-		container.add_child(lbl_acceleration)
-		container.add_child(acceleration)
-		container.add_child(lbl_deceleration)
-		container.add_child(deceleration)
+
 
 		if DRAGGABLE:
 			panel.connect("mouse_entered", self, "_panel_entered")
