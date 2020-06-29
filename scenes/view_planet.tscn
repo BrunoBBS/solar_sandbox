@@ -87,10 +87,10 @@ __meta__ = {
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
-margin_left = 2.0
-margin_top = 3.30164
+margin_left = 759.0
+margin_top = 3.0
 margin_right = -3.0
-margin_bottom = 595.302
+margin_bottom = 62.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
