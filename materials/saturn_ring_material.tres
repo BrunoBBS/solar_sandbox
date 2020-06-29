@@ -1,11 +1,11 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=1]
 flags = 23
 load_path = "res://.import/2k_saturn_ring_alpha.png-3ce68f237346a95d1aa5f5a7c6a4e38d.s3tc.stex"
 
 [resource]
 resource_name = "Material.002"
 flags_transparent = true
-albedo_texture = SubResource( 3 )
+albedo_texture = SubResource( 1 )
 metallic_specular = 0.0
