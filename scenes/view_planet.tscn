@@ -46,33 +46,33 @@ data = SubResource( 1 )
 script = ExtResource( 4 )
 
 [node name="Earth" parent="Planet Container" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2000, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.917477, -0.397789, 0, 0.397789, 0.917477, -2000, 0, 0 )
 input_capture_on_drag = true
 mass = 1.0
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 linear_velocity = Vector3( 0, 0, 100 )
-angular_velocity = Vector3( 0, 0.5, 0 )
+angular_velocity = Vector3( 0, 0.459, 0.199 )
 
 [node name="sun" parent="Planet Container" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.992005, -0.126199, 0, 0.126199, 0.992005, 0, 0, 0 )
 
 [node name="Jupiter" parent="Planet Container" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6000, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.998508, -0.0546016, 0, 0.0546016, 0.998508, -6000, 0, 0 )
 mass = 1.0
 linear_velocity = Vector3( 0, 0, 100 )
-angular_velocity = Vector3( 0, 0.2, 0 )
+angular_velocity = Vector3( 0, 0.2, 0.011 )
 script = ExtResource( 5 )
 
 [node name="Mars" parent="Planet Container" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3000, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, -0.000523599, 0, 0.000523599, 1, -3000, 0, 0 )
 mass = 1.0
 linear_velocity = Vector3( 0, 0, 100 )
-angular_velocity = Vector3( 0, 0.7, 0 )
+angular_velocity = Vector3( 0, 0.7, 0.004 )
 script = ExtResource( 5 )
 
 [node name="Saturn" parent="Planet Container" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10938.5, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.893136, -0.449787, 0, 0.449787, 0.893136, -10938.5, 0, 0 )
 linear_velocity = Vector3( 0, 0, 100 )
+angular_velocity = Vector3( 0, 0.179, 0.089 )
 script = ExtResource( 5 )
 
 [node name="OmniLight2" type="OmniLight" parent="."]
