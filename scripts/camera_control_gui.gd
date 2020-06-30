@@ -164,8 +164,7 @@ func _ready():
 		container.add_child(btn_rot_privot)
 		container.add_child(lbl_distance)
 		container.add_child(distance)
-		container.add_child(lbl_yaw)
-		container.add_child(yaw)
+
 
 
 		if DRAGGABLE:
