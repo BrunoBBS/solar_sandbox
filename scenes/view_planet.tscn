@@ -80,6 +80,7 @@ script = ExtResource( 5 )
 transform = Transform( 1, 0, 0, 0, 0.135197, 0.990819, 0, -0.990819, 0.135197, -17555.4, 0, 0 )
 linear_velocity = Vector3( 0, 0, 100 )
 angular_velocity = Vector3( 0, 0, 0.1 )
+script = ExtResource( 5 )
 
 [node name="OmniLight2" type="OmniLight" parent="."]
 light_energy = 2.4
